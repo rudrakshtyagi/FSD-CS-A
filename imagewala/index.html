@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    "
+  >
+    <img
+      id="gallery-img"
+      src="image1.jpg"
+      alt="Gallery Image"
+      style="
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 16px #0002;
+      "
+    />
+    <button id="change-btn" style="font-size: 22px; padding: 12px 40px">
+      Change
+    </button>
+    <script>
+      const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+      let idx = 0;
+      const img = document.getElementById("gallery-img");
+      document.getElementById("change-btn").onclick = function () {
+        idx = (idx + 1) % images.length;
+        img.src = images[idx];
+      };
+    </script>
+  </body>
+</html>
