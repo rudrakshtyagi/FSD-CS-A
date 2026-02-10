@@ -1,0 +1,55 @@
+function register(){
+   return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+      console.log('register end');
+      resolve();
+    },9000)
+   })
+    
+    
+}
+function sendEmail(){
+     return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+      console.log('send Email end');
+      resolve();
+    },3000)
+   })
+    
+}
+function login(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+      console.log('login end');
+      reject('login failed');
+    },2000)
+   })
+    
+}
+function getData(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+      console.log('getData end');
+      resolve();
+    },1000)  
+})
+}
+function displayData(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+      console.log('display Data end');
+      resolve();
+    },1000)  
+})
+    
+}
+
+async function f1(){
+ await register();
+ await sendEmail();
+ await login();
+ await getData();
+ await displayData();
+}
+f1();
+console.log('call other application')
